@@ -10,8 +10,13 @@ function App() {
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
 
-  const moveBack = () => setStep(Math.max(1, step - 1));
-  const moveForward = () => setStep(Math.min(step + 1, messages.length));
+  function moveBack() {
+    setStep((s) => Math.max(1, s - 1));
+  }
+
+  function moveForward() {
+    setStep((s) => Math.min(s + 1, messages.length));
+  }
 
   return (
     <>
