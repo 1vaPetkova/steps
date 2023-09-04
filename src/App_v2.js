@@ -1,4 +1,4 @@
-import { Children, useState } from "react";
+import { useState } from "react";
 
 const messages = [
   "Learn React ⚛️",
@@ -35,27 +35,22 @@ function App() {
             Step {step}: {messages[step - 1]}
           </p>
           <div className="buttons">
-            <Button action={moveBack} bgColor="#7950f2" textColor="#fff">
-              <span>👈</span> Previous
-            </Button>
-            <Button action={moveForward} bgColor="#7950f2" textColor="#fff">
-              Next <span>👉</span>
-            </Button>
+            <button
+              style={{ backgroundColor: "#7950f2", color: "#fff" }}
+              onClick={moveBack}
+            >
+              Previous
+            </button>
+            <button
+              style={{ backgroundColor: "#7950f2", color: "#fff" }}
+              onClick={moveForward}
+            >
+              Next
+            </button>
           </div>
         </div>
       )}
     </>
-  );
-}
-
-function Button({ action, bgColor, textColor, children }) {
-  return (
-    <button
-      style={{ backgroundColor: bgColor, color: textColor }}
-      onClick={action}
-    >
-      {children}
-    </button>
   );
 }
 
